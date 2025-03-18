@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xem Anime Online</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: white;
+            margin: 0;
+            padding: 0;
+			gap : 20px;
+        }
+		 footer { /*chan trang web */
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        header {
+            background-color: #1e1e1e;
+            padding: 15px;
+            text-align: center;
+        }
+        .nav-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #111;
+            padding: 10px 20px;
+        }
+        .nav-bar .logo {
+            color: red;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .nav-bar .menu {
+            display: flex;
+            gap: 15px;
+        }
+        .nav-bar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            background-color: #222;
+            border-radius: 5px;
+        }
+        .nav-bar a:hover {
+            background-color: #444;
+        }
+        .search-bar {
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            width: 250px;
+            background-color: #222;
+            color: white;
+        }
+        .login-btn {
+            background-color: red;
+            padding: 10px 15px;
+            border-radius: 5px;
+            color: white;
+            text-decoration: none;
+        }
+      .slider {
+            display: flex;
+            flex-wrap: wrap; /* Đảm bảo ảnh sẽ xuống hàng khi không đủ chỗ */
+            justify-content: center; /* Căn giữa ảnh */
+            gap: 20px; /* Khoảng cách giữa các ảnh */
+            max-width: 1200px; /* Giới hạn chiều rộng */
+            margin: 0 auto; /* Căn giữa toàn bộ slider */
+            overflow: hidden; /* Ngăn thanh cuộn ngang */
+	        margin-bottom: 40px; /* Tạo khoảng cách giữa các slider */
+	        padding: 40px;
+	        text-align : center;
+			display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 20px;
+            justify-content: center;
+}
+.anime-slide a {
+    text-decoration: none;
+    color: white ; /* Màu chữ */
+    font-weight: bold;
+}
+
+. a:hover {
+    color: red; /* Đổi màu khi di chuột */
+}
+     .footer-links a {
+            color: white; /* Màu chữ trắng */
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .footer-links a:hover {
+            color: #ffcc00; /* Màu chữ khi hover */
+            text-decoration: underline;
+        }s
+		.anime-slide p {
+    width: 100%;
+    font-size: 14px; /* Giảm kích thước chữ để vừa khung */
+    word-wrap: break-word; /* Xuống dòng khi cần */
+    white-space: normal; /* Cho phép chữ xuống dòng */
+    text-align: center; /* Căn giữa chữ */
+    margin-top: 5px; /* Tạo khoảng cách giữa ảnh và chữ */
+}
+        .slider img {
+            width: 180%; /* đồng bộ kích thước */
+            border-radius: 5px;
+        }
+        .anime-detail {
+            padding: 20px;
+            background-color: #222;
+            margin: 20px;
+            border-radius: 5px;
+        }
+        .anime-detail img {
+            width: 100%;
+            border-radius: 5px;
+        }
+        .watch-button {
+            display: inline-block;
+            background-color: red;
+            padding: 10px 15px;
+            border-radius: 5px;
+            color: white;
+            text-decoration: none;
+            margin-top: 10px;
+        }  
+		.slider .anime-slide img {
+            width: 150px; /* Điều chỉnh chiều rộng */
+            height: 220px; /* Điều chỉnh chiều cao */
+            object-fit: cover; /* Giữ tỷ lệ ảnh và cắt bớt phần dư nếu cần */
+            border-radius: 5px;
+			
+}
+        .anime-detail img {
+            width: 150px; /* Đồng bộ kích thước với các ảnh trên */
+            height: 220px;
+            object-fit: cover;
+             border-radius: 5px;
+}
+        .filter-container {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            padding: 10px;
+            background-color: #222;
+}
+        .filter-select {
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #333;
+            color: white;
+            border: none;
+            font-size: 14px;
+           cursor: pointer; /* phần tương tác */
+}
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Chào mừng đến với Anime Online</h1>
+    </header>
+    <nav class="nav-bar">
+        <div class="logo">AnimeOnline</div>
+        <div class="menu">
+         <a href="#">Trang Chủ</a> <select id="genreFilter" class="filter-select">
+        <option value="all">Tất cả thể loại</option>
+        <option value="action">Hành động</option>
+        <option value="adventure">Phiêu lưu</option>
+        <option value="fantasy">Fantasy</option>
+        <option value="comedy">Romance</option>
+        <option value="drama">Drama</option>
+        <option value="superpower">Isekai</option>
+		<option value="drama">Slice Of Life</option>
+		    <option value="drama">Military</option>
+        </select>
+          
+    <select id="seasonFilter" class="filter-select">
+        <option value="all">Tất cả mùa</option>
+        <option value="winter">Mùa Xuân </option>
+        <option value="spring">Mùa Hạ </option>
+        <option value="summer">Mùa Thu </option>
+        <option value="fall">Mùa Đông </option>
+    </select>
+
+    <select id="typeFilter" class="filter-select">
+        <option value="all">Tất cả dạng</option>
+        <option value="tv">TV Series</option>
+        <option value="ova">OVA</option>
+        <option value="movie">Movie</option>
+    </select>
+
+    <select id="scheduleFilter" class="filter-select">
+        <option value="all">Lịch Chiếu</option>
+        <option value="monday">Thứ Hai</option>
+        <option value="tuesday">Thứ Ba</option>
+        <option value="wednesday">Thứ Tư</option>
+        <option value="thursday">Thứ Năm</option>
+        <option value="friday">Thứ Sáu</option>
+        <option value="saturday">Thứ Bảy</option>
+        <option value="sunday">Chủ Nhật</option>
+    </select>
+        </div>
+        <input type="text" class="search-bar" placeholder="Tìm: Tên tiếng anh, Nhật,Việt...">
+        <a href="#" class="login-btn">Đăng Nhập</a>
+    </nav>
+	<div class="filter-container">
+</div>
+
+    <div class="slider">
+        <div class="anime-slide">
+            <img src="https://m.media-amazon.com/images/M/MV5BNTY1M2NjMTItOGFhNi00NDU3LWExNzQtZGY2YWJlYzExNmU3XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Re:Zero">
+            <p>Re:Zero</p>
+        </div>
+        <div class="anime-slide">
+            <img src="https://m.media-amazon.com/images/M/MV5BNmI1MmYxNWQtY2E5NC00ZTlmLWIzZGEtNzM1YmE3NDA5NzhjXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Jujutsu:Kaisen">
+            <p>Jujustu Kaisen</p>
+        </div>
+        <div class="anime-slide">
+            <img src="https://cdn.myanimelist.net/s/common/uploaded_files/1727479545-5521cc3281b1a2a4d3a50c4b643786ca.jpeg" alt="Tensei:Slime">
+            <p>Tensei SLime Datta Ken </p>
+        </div>
+		<div class="anime-slide">
+            <img src="https://images-na.ssl-images-amazon.com/images/I/81OYRZEQG7L.jpg" alt="Solo:Leveling">
+            <p>Solo Leveling </p>
+        </div>
+		<div class="anime-slide">
+            <img src="https://i0.wp.com/doublesama.com/wp-content/uploads/2022/09/Lycoris-Recoil-cover-art.jpg?resize=640%2C905" alt="Lycoris:Recoil">
+            <p>Lycoris recoil </p>
+        </div>
+		<div class="anime-slide">
+            <img src="https://cdns.klimg.com/kapanlagi.com/p/005yurucampseason22021eo2eibfucaamel0.jpg" alt="Yuru:Camp">
+            <p>Yuru camp </p>
+        </div>
+		<div class="anime-slide">
+            <img src="https://static.wikia.nocookie.net/majo-no-tabitabi/images/b/be/LN_16-C.jpg/revision/latest?cb=20210208091335&path-prefix=vi" alt="Elaina">
+            <p>Hành trình của Elaina </p>
+        </div>
+		<div class="anime-slide">
+            <img src="https://m.media-amazon.com/images/M/MV5BMzk2MDk5YjAtOTkzMy00MzlhLWExZWQtN2VhYzc1OTNkNDZmXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Elaina">
+            <p>Bofuri </p>
+        </div>
+		<div class="anime-slide">
+            <img src="https://cinema.momocdn.net/img/100409012704431103-conan.jpg" alt="Conan">
+            <p>Detective Conan </p>
+        </div>
+		<div class="anime-slide">
+            <img src="https://thuviensohoa.vn/img/news/2025/01/larger/6594-tai-sinh-thanh-nhen-1.jpg?v=9277" alt="Nhen">
+            <p>Chuyển sinh thành nhện  </p>
+        </div>
+		<div class="anime-slide">
+            <img src="https://cdn0.fahasa.com/media/catalog/product/9/7/9784758022941.jpg" alt="Whisper">
+            <p>Whispering you a love song </p>
+        </div>
+		<div class="anime-slide">
+            <img src="https://mmosite.vn/wp-content/uploads/2022/05/e91cf0d557a9b203b6937038a4b1644b1652905568_main.jpg.webp" alt="Suzume">
+            <p> Khóa chặt cửa nào Suzume </p>
+        </div>
+		<div class="anime-slide">
+            <img src="https://upload.wikimedia.org/wikipedia/vi/1/13/%C3%81p_ph%C3%ADch_phim_Karakai_Jouzu_no_Takagi-san_Movie.jpg" alt="Takagi">
+            <p>Takagi-san</p>
+        </div>
+		<div class="anime-slide">
+            <img src="https://m.media-amazon.com/images/M/MV5BMzk3ZTQ1ZmItNTc5OC00YjU2LThhZGYtOGY1NzVkNWNhNjJjXkEyXkFqcGc@._V1_.jpg" alt="Hibike">
+            <p>Hibike-euphonium </p>
+        </div>
+    </div>
+	<div class="anime-detail" style="
+    position: relative;
+    background: url('one piece.jpg') no-repeat center center/cover;
+    padding: 40px;
+    color: white;
+    border-radius: 10px;
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+	margin : auto;
+">
+    <!-- Lớp phủ tối để làm nổi bật nội dung -->
+    <div style="
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        border-radius: 10px;
+    "></div>
+
+    <!-- Nội dung chính -->
+    <div style="position: relative; z-index: 2; max-width: 60%;">
+        <h2>One Piece : Đảo Hải Tặc </h2>
+        <p style="display: flex; align-items: center; gap: 10px;">
+            <span style="color: #FFD700;">4.8★</span> |
+            <span>📌 14/16</span> |
+            <span>📅 2025</span> |
+            <span style="color: red; font-weight: bold;">FHD</span>
+        </p>
+        <p><i>Movie Đặc Biệt </i></p>
+        <p><b>📽 Studio:</b> White Fox</p>
+        <p><b>📚 Thể Loại:</b> Suspense, Thriller, Psychological, Fantasy, Drama</p>
+
+        <div style="display: flex; align-items: center; gap: 10px; margin-top: 15px; ">
+            <!-- Hình avatar nhân vật -->
+            <div style="display: flex; gap: 5px;">
+                <img src="one piece.jpg" alt="Avatar" style="width: 40px; height: 40px; border-radius: 50%; background: white;">
+                <div style="width: 40px; height: 40px; border-radius: 50%; background: rgba(255, 255, 255, 0.5); display: flex; align-items: center; justify-content: center;">
+                    <b>...</b>
+                </div>
+            </div>
+
+            <!-- Nút xem phim -->
+            <a href="#" class="watch-button" style="padding: 10px 15px; background: red; color: white; text-decoration: none; border-radius: 5px; font-weight: bold;">
+                ▶ Xem Phim
+            </a>
+        </div>
+    </div>
+</div>
+
+	 <div class="slider">
+	<div class="anime-slide">
+    <a href="https://youtu.be/d7jObi1EMwQ" target="_blank">
+        <img src="https://iguov8nhvyobj.vcdn.cloud/media/catalog/product/cache/1/image/c5f0a1eff4c394a251036189ccddaacd/0/1/01-qq-_lightbox_poster_-vn_1_.jpg" alt="Nha Co 5 Nang Dau">
+        <p>Nhà có 5 nàng dâu</p>
+    </a>
+</div>
+
+		<div class="anime-slide">
+    <a href="https://youtu.be/DKW0xllwJak?si=TZUu8kXhgzW4vgCL" target="_blank">
+        <img src="https://m.media-amazon.com/images/M/MV5BZTI4ZGMxN2UtODlkYS00MTBjLWE1YzctYzc3NDViMGI0ZmJmXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Frieren">
+        <p>Frieren </p>
+    </a>
+</div>
+		<div class="anime-slide">
+    <a href="https://youtu.be/mZUhGg8WeQQ?si=nZMMDQVhQ5kwjvXG" target="_blank">
+        <img src="https://image.tmdb.org/t/p/original/pXqJlwvx0l8bKoUyJkmdh5xu4av.jpg" alt="Co dau ma phap su">
+        <p>Cô dâu ma của pháp sư </p>
+    </a>
+</div>
+<div class="anime-slide">
+    <a href="https://youtu.be/mZUhGg8WeQQ?si=nZMMDQVhQ5kwjvXG" target="_blank">
+        <img src="https://f.ptcdn.info/285/087/000/ssoyi123bb0K2r7g27L5F-o.png" alt="Thanh guom diet quy">
+        <p>Thanh gươm diệt quỷ  </p>
+    </a>
+</div>
+<div class="anime-slide">
+    <a href="https://youtu.be/mZUhGg8WeQQ?si=nZMMDQVhQ5kwjvXG" target="_blank">
+        <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1685089517i/163795609.jpg" alt="Thien su nha ben">
+        <p>Thiên sứ nhà bên  </p>
+    </a>
+</div>
+<div class="anime-slide">
+    <a href="https://youtu.be/mZUhGg8WeQQ?si=nZMMDQVhQ5kwjvXG" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/vi/5/51/%C3%81p_ph%C3%ADch_phim_Th%C3%A1ng_T%C6%B0_l%C3%A0_l%E1%BB%9Di_n%C3%B3i_d%E1%BB%91i_c%E1%BB%A7a_em.jpg" alt="Thang 4 la loi noi doi cua em ">
+        <p>Tháng 4 là lời nói dối của em </p>
+    </a>
+</div>
+    </div>
+	 <footer>
+        <p>&Bii 2025 AnimeOnline.Sever.</p>
+        <div class="footer-links">
+            <a href="#">Trang chủ</a> |
+            <a href="#">Giới thiệu</a> |
+            <a href="#">Liên hệ</a>
+        </div>
+    </footer>
+</body>
+</html>
+https://youtu.be/DKW0xllwJak?si=TZUu8kXhgzW4vgCL
+https://youtu.be/mZUhGg8WeQQ?si=nZMMDQVhQ5kwjvXG
