@@ -5,17 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Xem Anime Online</title>
     <style>
-	 /* Mặc định cho Laptop, PC */
-        body {
-            background-color: lightblue;
-        }
-
-        /* Khi màn hình nhỏ hơn 768px (điện thoại) */
-        @media screen and (max-width: 768px) {
-            body {
-                background-color: lightcoral;
-            }
-        }
         body {
             font-family: Arial, sans-serif;
             background-color: #121212;
@@ -94,17 +83,17 @@
             grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
             gap: 20px;
             justify-content: center;
-}
-.anime-slide a {
-    text-decoration: none;
-    color: white ; /* Màu chữ */
-    font-weight: bold;
-}
+          }
+       .anime-slide a {
+           text-decoration: none;
+            color: white ; /* Màu chữ */
+           font-weight: bold;
+       }
 
-. a:hover {
-    color: red; /* Đổi màu khi di chuột */
-}
-     .footer-links a {
+       .a:hover {
+          color: red; /* Đổi màu khi di chuột */
+        }
+           .footer-links a {
             color: white; /* Màu chữ trắng */
             text-decoration: none;
             margin: 0 10px;
@@ -116,13 +105,13 @@
             text-decoration: underline;
         }s
 		.anime-slide p {
-    width: 100%;
-    font-size: 14px; /* Giảm kích thước chữ để vừa khung */
-    word-wrap: break-word; /* Xuống dòng khi cần */
-    white-space: normal; /* Cho phép chữ xuống dòng */
-    text-align: center; /* Căn giữa chữ */
-    margin-top: 5px; /* Tạo khoảng cách giữa ảnh và chữ */
-}
+          width: 100%;
+          font-size: 14px; /* Giảm kích thước chữ để vừa khung */
+          word-wrap: break-word; /* Xuống dòng khi cần */
+         white-space: normal; /* Cho phép chữ xuống dòng */
+          text-align: center; /* Căn giữa chữ */
+          margin-top: 5px; /* Tạo khoảng cách giữa ảnh và chữ */
+}  
         .slider img {
             width: 180%; /* đồng bộ kích thước */
             border-radius: 5px;
@@ -179,7 +168,7 @@
 </head>
 <body>
     <header>
-        <h1>Chào mừng đến với Anime Online</h1>
+        <h1> Anime Online</h1>
     </header>
     <nav class="nav-bar">
         <div class="logo">AnimeOnline</div>
@@ -210,17 +199,14 @@
         <option value="ova">OVA</option>
         <option value="movie">Movie</option>
     </select>
+	
+    <select id="typeFilter" class="filter-select">
+        <option value="all">Lịch sử </option>
 
-    <select id="scheduleFilter" class="filter-select">
-        <option value="all">Lịch Chiếu</option>
-        <option value="monday">Thứ Hai</option>
-        <option value="tuesday">Thứ Ba</option>
-        <option value="wednesday">Thứ Tư</option>
-        <option value="thursday">Thứ Năm</option>
-        <option value="friday">Thứ Sáu</option>
-        <option value="saturday">Thứ Bảy</option>
-        <option value="sunday">Chủ Nhật</option>
     </select>
+
+    
+	
         </div>
         <input type="text" class="search-bar" placeholder="Tìm: Tên tiếng anh, Nhật,Việt...">
         <a href="#" class="login-btn">Đăng Nhập</a>
@@ -250,11 +236,11 @@
             <p>Lycoris recoil </p>
         </div>
 		<div class="anime-slide">
-            <img src="https://cdns.klimg.com/kapanlagi.com/p/005yurucampseason22021eo2eibfucaamel0.jpg" alt="Yuru:Camp">
+            <img src="https://i.pinimg.com/736x/2b/16/b5/2b16b5139360816305404dd719faca1b.jpg" alt="Yuru:Camp">
             <p>Yuru camp </p>
         </div>
 		<div class="anime-slide">
-            <img src="https://static.wikia.nocookie.net/majo-no-tabitabi/images/b/be/LN_16-C.jpg/revision/latest?cb=20210208091335&path-prefix=vi" alt="Elaina">
+            <img src="https://i.pinimg.com/736x/86/af/d1/86afd19ea3774af420d25306efbfc57a.jpg" alt="Elaina">
             <p>Hành trình của Elaina </p>
         </div>
 		<div class="anime-slide">
@@ -266,7 +252,7 @@
             <p>Detective Conan </p>
         </div>
 		<div class="anime-slide">
-            <img src="https://thuviensohoa.vn/img/news/2025/01/larger/6594-tai-sinh-thanh-nhen-1.jpg?v=9277" alt="Nhen">
+            <img src="https://dilib.vn/img/news/2025/01/larger/6594-tai-sinh-thanh-nhen-1.jpg?v=9277" alt="Nhen">
             <p>Chuyển sinh thành nhện  </p>
         </div>
 		<div class="anime-slide">
@@ -285,10 +271,26 @@
             <img src="https://m.media-amazon.com/images/M/MV5BMzk3ZTQ1ZmItNTc5OC00YjU2LThhZGYtOGY1NzVkNWNhNjJjXkEyXkFqcGc@._V1_.jpg" alt="Hibike">
             <p>Hibike-euphonium </p>
         </div>
+		<div class="anime-slide">
+            <img src="https://i.pinimg.com/736x/63/96/aa/6396aaf9d4c8ccfa74299eab2ddc16d7.jpg" alt="Fate">
+            <p>Fate Series </p>
+        </div>
+		<div class="anime-slide">
+            <img src="https://i.pinimg.com/736x/7b/00/5c/7b005c26670915f76017f8455ac8e85c.jpg" alt="86">
+            <p>Eighty Six </p>
+        </div>
+		<div class="anime-slide">
+            <img src="https://i.pinimg.com/736x/ea/0d/1c/ea0d1c25f8e6e5222401a37979ae5539.jpg" alt="Shikimori">
+            <p>Shikimori không chỉ dễ thương</p>
+        </div>
+		<div class="anime-slide">
+            <img src="https://i.pinimg.com/736x/9e/7f/e0/9e7fe0659f6773eafeeeb912e13d5626.jpg" alt="Ice Guy">
+            <p>Chàng băng nàng lạnh </p>
+        </div>
     </div>
 	<div class="anime-detail" style="
     position: relative;
-    background: url('one piece.jpg') no-repeat center center/cover;
+    background: url('https://gamelade.vn/wp-content/uploads/2024/12/one-piece-anime-egghead-arc-resumes-in-2025.webp') no-repeat center center/cover;
     padding: 40px;
     color: white;
     border-radius: 10px;
@@ -314,18 +316,18 @@
         <h2>One Piece : Đảo Hải Tặc </h2>
         <p style="display: flex; align-items: center; gap: 10px;">
             <span style="color: #FFD700;">4.8★</span> |
-            <span>📌 14/16</span> |
+            <span>📌 ??/2030</span> |
             <span>📅 2025</span> |
             <span style="color: red; font-weight: bold;">FHD</span>
         </p>
         <p><i>Movie Đặc Biệt </i></p>
-        <p><b>📽 Studio:</b> White Fox</p>
+        <p><b>📽 Studio:</b> Toei Animation</p>
         <p><b>📚 Thể Loại:</b> Suspense, Thriller, Psychological, Fantasy, Drama</p>
 
         <div style="display: flex; align-items: center; gap: 10px; margin-top: 15px; ">
             <!-- Hình avatar nhân vật -->
             <div style="display: flex; gap: 5px;">
-                <img src="one piece.jpg" alt="Avatar" style="width: 40px; height: 40px; border-radius: 50%; background: white;">
+                <img src="https://cdn2.fptshop.com.vn/unsafe/Uploads/images/tin-tuc/174978/Originals/avatar%20one%20piece%20(11).jpg" alt="Avatar" style="width: 40px; height: 40px; border-radius: 50%; background: white;">
                 <div style="width: 40px; height: 40px; border-radius: 50%; background: rgba(255, 255, 255, 0.5); display: flex; align-items: center; justify-content: center;">
                     <b>...</b>
                 </div>
@@ -377,16 +379,75 @@
         <p>Tháng 4 là lời nói dối của em </p>
     </a>
 </div>
+<div class="anime-slide">
+    <a href="https://youtu.be/mZUhGg8WeQQ?si=nZMMDQVhQ5kwjvXG" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/vi/5/51/%C3%81p_ph%C3%ADch_phim_Th%C3%A1ng_T%C6%B0_l%C3%A0_l%E1%BB%9Di_n%C3%B3i_d%E1%BB%91i_c%E1%BB%A7a_em.jpg" alt="Thang 4 la loi noi doi cua em ">
+        <p>Tháng 4 là lời nói dối của em </p>
+    </a>
+</div>
+<div class="anime-slide">
+    <a href="https://youtu.be/mZUhGg8WeQQ?si=nZMMDQVhQ5kwjvXG" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/vi/5/51/%C3%81p_ph%C3%ADch_phim_Th%C3%A1ng_T%C6%B0_l%C3%A0_l%E1%BB%9Di_n%C3%B3i_d%E1%BB%91i_c%E1%BB%A7a_em.jpg" alt="Thang 4 la loi noi doi cua em ">
+        <p>Tháng 4 là lời nói dối của em </p>
+    </a>
+</div>
+<div class="anime-slide">
+    <a href="https://youtu.be/mZUhGg8WeQQ?si=nZMMDQVhQ5kwjvXG" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/vi/5/51/%C3%81p_ph%C3%ADch_phim_Th%C3%A1ng_T%C6%B0_l%C3%A0_l%E1%BB%9Di_n%C3%B3i_d%E1%BB%91i_c%E1%BB%A7a_em.jpg" alt="Thang 4 la loi noi doi cua em ">
+        <p>Thám tử đã chết </p>
+    </a>
+</div>
+<div class="anime-slide">
+    <a href="https://youtu.be/mZUhGg8WeQQ?si=nZMMDQVhQ5kwjvXG" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/vi/5/51/%C3%81p_ph%C3%ADch_phim_Th%C3%A1ng_T%C6%B0_l%C3%A0_l%E1%BB%9Di_n%C3%B3i_d%E1%BB%91i_c%E1%BB%A7a_em.jpg" alt="Thang 4 la loi noi doi cua em ">
+        <p>Dark Gathering  </p>
+    </a>
+</div>
+<div class="anime-slide">
+    <a href="https://youtu.be/mZUhGg8WeQQ?si=nZMMDQVhQ5kwjvXG" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/vi/5/51/%C3%81p_ph%C3%ADch_phim_Th%C3%A1ng_T%C6%B0_l%C3%A0_l%E1%BB%9Di_n%C3%B3i_d%E1%BB%91i_c%E1%BB%A7a_em.jpg" alt="Thang 4 la loi noi doi cua em ">
+        <p>Mono </p>
+    </a>
+</div>
     </div>
 	 <footer>
-        <p>&Bii 2025 AnimeOnline.Sever.</p>
+        <p>&Bii_2025/AnimeOnline.Sever.230701</p>
         <div class="footer-links">
             <a href="#">Trang chủ</a> |
             <a href="#">Giới thiệu</a> |
             <a href="#">Liên hệ</a>
         </div>
     </footer>
+   <script>
+    document.addEventListener("DOMContentLoaded", function() {
+       const genreFilter = document.getElementById("genreFilter");
+        const animeSlides = document.querySelectorAll(".anime-slide");
+
+        // Khi chọn thể loại
+        genreFilter.addEventListener("change", function() {
+            const selectedGenre = this.value;
+
+            animeSlides.forEach(slide => {
+                if (selectedGenre === "all" || slide.getAttribute("data-genre") === selectedGenre) {
+                    slide.style.display = "block";
+                } else {
+                    slide.style.display = "none";
+                }
+            });
+        });
+
+        // Hiệu ứng click ảnh chuyển tới trang chi tiết
+        animeSlides.forEach(slide => {
+            slide.addEventListener("click", function() {
+                const title = this.querySelector("p").innerText;
+                alert(`Bạn đã chọn anime: ${title}`);
+                // có thể thay alert bằng window.location.href = "trang.html";
+            });
+        });
+    });
+</script>
+
 </body>
 </html>
-https://youtu.be/DKW0xllwJak?si=TZUu8kXhgzW4vgCL
-https://youtu.be/mZUhGg8WeQQ?si=nZMMDQVhQ5kwjvXG
+
+
